@@ -4,7 +4,7 @@ function UserList({ users, onEdit, onDelete }) {
   if (users.length === 0) {
     return (
       <div className="empty-state">
-        <p>Chưa có người dùng nào. Hãy thêm người dùng mới!!!</p>
+        <p>Chưa có người dùng nào. Hãy thêm người dùng mới!!</p>
       </div>
     );
   }

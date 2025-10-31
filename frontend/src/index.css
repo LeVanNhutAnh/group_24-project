@@ -1,0 +1,167 @@
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --font-sans: 'Geist', 'Inter', 'SF Pro Display', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', 'Menlo', monospace;
+
+  --background: 218 33% 97%;
+  --foreground: 222 47% 11%;
+  --subtle: 215 24% 95%;
+  --subtle-foreground: 220 15% 36%;
+  --muted: 216 20% 92%;
+  --muted-foreground: 222 14% 38%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 12%;
+  --border: 215 22% 82%;
+  --divider: 215 24% 70%;
+  --input: 215 30% 94%;
+  --ring: 219 90% 56%;
+
+  --primary: 219 100% 56%;
+  --primary-foreground: 0 0% 100%;
+  --primary-soft: 219 88% 90%;
+
+  --accent: 266 89% 63%;
+  --accent-foreground: 0 0% 100%;
+  --accent-soft: 266 88% 88%;
+
+  --destructive: 0 82% 56%;
+  --destructive-foreground: 0 0% 100%;
+
+  --warning: 37 94% 58%;
+  --warning-foreground: 28 78% 14%;
+
+  --success: 148 58% 46%;
+  --success-foreground: 151 85% 12%;
+
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-sm: 0 8px 20px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 40px 70px rgba(15, 23, 42, 0.16);
+
+  --space-xs: 0.4rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 1.75rem;
+  --space-xl: 2.5rem;
+  --space-xxl: 3.5rem;
+
+  --content-width: 1200px;
+  --content-gutter: clamp(1.5rem, 4vw, 3.5rem);
+
+  --transitions-base: all 0.18s ease-out;
+  --transitions-bounce: all 0.22s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: 222 40% 6%;
+    --foreground: 214 32% 92%;
+    --subtle: 222 34% 10%;
+    --subtle-foreground: 215 20% 70%;
+    --muted: 222 28% 12%;
+    --muted-foreground: 214 20% 72%;
+    --popover: 222 45% 6%;
+    --popover-foreground: 214 32% 92%;
+    --card: 222 45% 7%;
+    --card-foreground: 214 32% 92%;
+    --border: 220 28% 22%;
+    --divider: 220 20% 30%;
+    --input: 220 26% 16%;
+    --ring: 219 100% 68%;
+    --primary: 219 100% 68%;
+    --primary-foreground: 0 0% 0%;
+    --primary-soft: 219 85% 18%;
+    --accent: 266 92% 70%;
+    --accent-foreground: 0 0% 0%;
+    --accent-soft: 266 78% 20%;
+    --destructive: 0 74% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 42 96% 64%;
+    --warning-foreground: 30 79% 18%;
+    --success: 150 54% 46%;
+    --success-foreground: 149 100% 12%;
+    --shadow-xs: 0 8px 20px rgba(0, 0, 0, 0.4);
+    --shadow-sm: 0 14px 30px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 24px 50px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 44px 90px rgba(0, 0, 0, 0.55);
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: hsl(var(--border));
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background: radial-gradient(circle at top left, rgba(120, 141, 255, 0.06), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(141, 210, 255, 0.08), transparent 60%),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+.surface-card {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border-radius: var(--radius-lg);
+  border: 1px solid hsla(var(--border) / 0.6);
+  box-shadow: var(--shadow-sm);
+}
+
+.surface-card[data-elevated='true'] {
+  box-shadow: var(--shadow-md);
+}
+
+.container {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+  padding-inline: var(--content-gutter);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
