@@ -1,0 +1,40 @@
+.App {
+  min-height: 100vh;
+  background: transparent;
+  color: hsl(var(--foreground));
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+  z-index: 999;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
